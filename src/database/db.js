@@ -1,8 +1,7 @@
 import { Database } from 'sqlite-async'
-Database.open('src/database/database.sqlite').then(execute)
 
 function execute(db) {
-    db.exec(`
+    return db.exec(`
     CREATE TABLE IF NOT EXISTS proffys (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
@@ -27,3 +26,6 @@ function execute(db) {
     );
 `)
 }
+
+
+module.exports = Database.open('src/database/database.sqlite').then(execute)
