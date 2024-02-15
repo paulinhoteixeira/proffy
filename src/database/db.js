@@ -28,4 +28,5 @@ function execute(db) {
 }
 
 
-module.exports = Database.open('src/database/database.sqlite').then(execute)
+export default Database.open('src/database/database.sqlite').then(execute)
+
